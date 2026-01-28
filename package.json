@@ -78,6 +78,7 @@
     "tailwindcss": "3.4.1",
     "typescript": "^5.8.2",
     "vite": "^7.1.12",
-    "png-to-ico": "^1.0.0"
+    "png-to-ico": "^1.0.0",
+    "jimp": "^0.16.1"
   }
 }

@@ -47,8 +47,8 @@ export default function Header({ onNavigate }: HeaderProps) {
     <>
       <header
         ref={headerRef}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
+          scrolled ? "bg-white/95 shadow-md" : "bg-white/10"
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
@@ -58,7 +58,7 @@ export default function Header({ onNavigate }: HeaderProps) {
               <img
                 src="/logo.png"
                 alt="Lucira logo"
-                className="h-10 object-contain"
+                className="h-16 object-contain"
               />
             </div>
 
