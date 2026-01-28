@@ -33,7 +33,7 @@ export default function Header({ onNavigate }: HeaderProps) {
       gsap.fromTo(
         linksRef.current.children,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, ease: "power2.out" }
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, ease: "power2.out" },
       );
     }
   }, [mobileMenuOpen]);
@@ -48,26 +48,18 @@ export default function Header({ onNavigate }: HeaderProps) {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Logo (uses /logo.png from the public folder) */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal to-amber flex items-center justify-center">
-                <Sun className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <span className={`font-poppins font-semibold text-lg ${scrolled ? 'text-navy' : 'text-white'}`}>
-                  Lucira
-                </span>
-                <span className={`hidden sm:inline font-inter text-sm ml-1 ${scrolled ? 'text-navy/70' : 'text-white/80'}`}>
-                  Renewable Venture
-                </span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Lucira logo"
+                className="h-10 object-contain"
+              />
             </div>
 
             {/* Desktop Navigation */}
@@ -98,7 +90,11 @@ export default function Header({ onNavigate }: HeaderProps) {
                 scrolled ? "text-navy" : "text-white"
               }`}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
